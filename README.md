@@ -4,7 +4,7 @@ This document describes all resources in the repository branch.
 
 ## Sent_Vent-final  
 
-The code in the Sent_Vent-final folder contains all self-authory code that is strictly necessary in order to reproduce the dataset used for this project.  
+The code in the Sent_Vent-final folder contains all self-authory code that is strictly necessary in order to reproduce the dataset used for this project and necessarily needed to be collected using a script.  
 
 Here is a list of its contents:  
 
