@@ -6,7 +6,7 @@
   
   -Ensure that every single tweet in scope is taken into account, in detriment of speed and memory.  
   
-  -Ensure that no error returned by the intepreter interfieres with a correct functioning.  
+  -Ensure that no error returned by the intepreter interfieres with a correct functioning (avoid data leaks and corruption).  
   
   -Notify of errors using a Telegram bot and record them into errorLog.txt.  
   
