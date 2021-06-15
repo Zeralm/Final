@@ -63,5 +63,6 @@ htop
 
 
 (If that’s the case, either get a device with more memory (2,25GB is assured to cause problems already) or somehow optimize usage. Selenium uses a lot of ram, and driver.findelements[...] calls take a sizable toll. Most of them are concentrated in the loop adding links to the set linkos. 
-You could also do nothing, and wait for it to eventually fix itself. Sometimes that works.)
+You could also do nothing, and wait for it to eventually fix itself. Sometimes that works.
+For example, aborting the ssh connection with your instance and let it do its work solves many memory problems.)
 
