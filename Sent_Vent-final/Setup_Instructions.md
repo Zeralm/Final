@@ -1,6 +1,6 @@
 # Setup Instructions
 
-These instructions should work for Debian and Ubuntu. I recommend running it in a machine with more than 2.25 RAM memory.
+These instructions should work for Debian and Ubuntu. I recommend running it in a machine with more than 2.25GB RAM memory.
 
 sudo apt-get update  
 sudo apt install python3-pip (/OR/) sudo apt-get -y install python3-pip  
