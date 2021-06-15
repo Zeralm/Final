@@ -18,7 +18,7 @@ Here is a list of its contents:
   
   fundownload.py - Script that downloads basic information, including legal names, from a database of Startups called Fundz, as recommended by the propietary website.  
   
-  mergecsv.py - Script that merges all CSVs downloaded by fundownload.py  
+  mergecsv.py - Script that merges all CSVs downloaded by fundownload.py , and outputs them into either a csv or the local database
   
   ThesisDatabase.db - Sqlite3 database that stores data at the company level and is ready for tweet data to be inserted in it, mainly through seleCrawl.py.  
   
