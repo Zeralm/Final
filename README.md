@@ -8,7 +8,7 @@ The code in the Sent_Vent-final folder contains all self-authory code that is st
 
 Here is a list of its contents:  
 
-  seleCrawl.py - An ethical tool that accesses Twitter and analyzes user-generated content in situ as explicitly allowed in Twitter's Terms of Use under the denomination of crawling, complying with the necessary specifications and data protection.  
+  seleCrawl.py - An ethical tool that accesses Twitter and analyzes user-generated content in situ as explicitly allowed in Twitter's Terms of Use under the denomination of crawling, complying with the necessary specifications.  
   
   storage.py - A module used for facilitating the access to the thematic database.  
   
