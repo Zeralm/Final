@@ -20,8 +20,8 @@ driver = webdriver.Chrome("C:/Windows/chromedriver.exe")
 driver.get("https://app.fundz.net/users/sign_in")
 user = driver.find_element_by_xpath("/html/body/div/div/div/div/div/form/input[1]")
 passw = driver.find_element_by_xpath("/html/body/div/div/div/div/div/form/input[2]")
-user.send_keys("mtourkadze@gmail.com")
-passw.send_keys("Simono123")
+user.send_keys("@") #Username
+passw.send_keys("") #Password
 user.send_keys(Keys.ENTER)
 
 
