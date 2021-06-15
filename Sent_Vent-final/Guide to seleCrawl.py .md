@@ -14,6 +14,8 @@
   
   -Store data generated on top of Twitter in data/ThesisDatabase.db  
   
+  -Mark all obsevations susceptible of being dubious, for further inspection.
+  
   
  ### What it does not do:  
 
