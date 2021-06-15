@@ -10,7 +10,7 @@ Here is a list of its contents:
 
   seleCrawl.py - An ethical tool that accesses Twitter and analyzes user-generated content in situ as explicitly allowed in Twitter's Terms of Use under the denomination of crawling, complying with the necessary specifications.  
   
-  storage.py - A module used for facilitating the access to the thematic database.  
+  storage.py - A module used for facilitating the access to the local thematic database ThesisDatabase.db.  
   
   "Array creator.ipynb" - A jupyter notebook that processes 18.000 recent tweets extracted from the Twitter API to tokenize and lemmatize them and finally summarize an array of the most used words.  
   
