@@ -26,7 +26,7 @@
   -Support remote troubleshooting through Telegram.  
   
   
-  ###How it works:  
+  ### How it works:  
   
   
   -Once the setup is provided as Setup Commands for seleCrawl suggest, the script call takes this form:  
