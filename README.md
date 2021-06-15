@@ -12,7 +12,7 @@ Here is a list of its contents:
   
   storage.py - A module used for facilitating the access to the local thematic database ThesisDatabase.db.  
   
-  "Array creator.ipynb" - A jupyter notebook that processes 18.000 recent tweets extracted from the Twitter API to tokenize and lemmatize them and finally summarize an array of the most used words.  
+  "Array creator.ipynb" - A jupyter notebook that processes 18.000 recent tweets extracted from the Twitter API to tokenize and lemmatize them and finally summarize them as an array of the most used words.  
   
   data/WordArray.csv - The array outputed by the afforementioned jupyter file.  
   
