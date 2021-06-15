@@ -10,7 +10,7 @@
   
   -Notify of errors using a Telegram bot and record them into errorLog.txt.  
   
-  -Group its query sessions in time brackets of one month, starting at one month before a funding.  
+  -Group its querying sessions in time brackets of one month, starting at one month before a funding.  
   
   -Store data generated on top of Twitter in data/ThesisDatabase.db  
   
