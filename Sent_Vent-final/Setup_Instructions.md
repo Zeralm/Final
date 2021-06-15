@@ -7,13 +7,13 @@ sudo apt install python3-pip (/OR/) sudo apt-get -y install python3-pip
 pip3 install pandas selenium numpy nltk matplotlib chromedriver_binary  
 sudo apt install python3-requests  
 sudo apt install git-all  
-cd /home/mtourkadze  
-git clone https://github.com/Zeralm/Sent_Vent "Thesis - Linux optimized"  
+cd /home/[USERNAME]  
+git clone https://github.com/Zeralm/Final "Thesis - Linux optimized"  
 sudo apt-get install wget REDUNDANT in UBUNTU 20.  
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb  
 sudo apt install ./google-chrome-stable_current_amd64.deb  
 sudo apt install screen     (REDUNDANT in UBUNTU 20)  
-cd 'Thesis - Linux optimized'  
+cd '/Thesis - Linux optimized'/Sent_Vent-final  
 screen  
 python3 seleCrawl.py [month_before_funding] [telegram_chat_id (optional)]  
 alt+a   
@@ -35,7 +35,7 @@ quit()
 
 (To update a Single file to the new github version, namely seleCrawl.py:)  
 screen -r  
-cd /home/mtourkadze/'Thesis - Linux optimized'  
+cd '/home/[USERNAME]/Thesis - Linux optimized/Sent_Vent-final'  
 wget -O seleCrawl.py - https://raw.githubusercontent.com/Zeralm/Final/main/Sent_Vent-final/seleCrawl.py  
 vim seleCrawl.py  
 python3 seleCrawl.py  
