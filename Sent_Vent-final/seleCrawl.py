@@ -82,7 +82,7 @@ def extract(driver, iteration = 0):
         if iteration >= 4: print("Collecting process resumed.")
         
     except StaleElementReferenceException:
-        print('ou shiat')
+        print('window moved')
         global staleMarker
         staleMarker+=1
         if iteration <= 20:
