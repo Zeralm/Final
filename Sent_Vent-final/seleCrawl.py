@@ -253,7 +253,7 @@ def search_fromCSV(Data,holy_array, bookmark = 0):
                 if (list(lista.values) == list(clean(nltk.tokenize.word_tokenize("TweetsNotFound", "english"),stops).values) or list(lista.values) == list(clean(nltk.tokenize.word_tokenize("EMPTY_RESULT", "english"),stops).values)):
                     return [j for j in lista]
                 else:
-                    return [j for j in lista if j in holy_array]
+                    return [j for j in lista if j in holy_array.values]
                     
             
             storage.add_tweets([(str(" ".join(select(clean(nltk.tokenize.word_tokenize(z[0]),stops),holy_array))),fiki.polarity_scores(z[0])["compound"],fiki.polarity_scores(z[0])["pos"],fiki.polarity_scores(z[0])["neg"],fiki.polarity_scores(z[0])["neu"], Data["Company"].iloc[l], z[3], z[2], z[1],bracket) for z in links])
