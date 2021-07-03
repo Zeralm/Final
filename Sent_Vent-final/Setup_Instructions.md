@@ -5,7 +5,7 @@ These instructions should work for Debian and Ubuntu. I recommend running it in 
 sudo apt-get update  
 sudo apt update  
 sudo apt install python3-pip (/OR/) sudo apt-get -y install python3-pip  
-pip3 install pandas selenium numpy nltk matplotlib chromedriver-binary-auto
+pip3 install pandas selenium numpy nltk matplotlib chromedriver-binary-auto  
 sudo apt install python3-requests  
 sudo apt install git-all  
 cd /home/[USERNAME]  
