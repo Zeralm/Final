@@ -50,7 +50,7 @@ truncate -s 0 data/errorLog.txt
 python3 seleCrawl.py [month_before_funding] [telegram_chat_id -optional-]  
 (The Telegram bot name is @seleCrawl_bot, its conversation ID can be obtained at https://api.telegram.org/bot1884693807:AAE6h2zB6FNtddDckG6FuH1jpe_z3UJCdJ8/getUpdates after messaging it)
 
-(Reminder for me: connect instantly to any instance with gcloud compute ssh [user@instance] --zone [e.g us-east1-b] using gcloud prompt. Need to configure putty)  
+(Reminder for me: connect instantly to any instance with gcloud compute ssh [user@instance] --project [PROJECT ID] --zone [e.g us-east1-b] using gcloud prompt. Need to configure putty)  
 
 
 
