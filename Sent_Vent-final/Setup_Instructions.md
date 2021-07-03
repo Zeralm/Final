@@ -5,7 +5,6 @@ These instructions should work for Debian and Ubuntu. I recommend running it in 
 sudo apt-get update  
 sudo apt update  
 sudo apt install python3-pip (/OR/) sudo apt-get -y install python3-pip  
-pip3 install pandas selenium numpy nltk matplotlib chromedriver-binary-auto  
 sudo apt install python3-requests  
 sudo apt install git-all  
 cd /home/[USERNAME]  
@@ -13,6 +12,7 @@ git clone https://github.com/Zeralm/Final "Thesis - Linux optimized"
 sudo apt-get install wget REDUNDANT in UBUNTU 20.  
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb  
 sudo apt install ./google-chrome-stable_current_amd64.deb  
+pip3 install pandas selenium numpy nltk matplotlib chromedriver-binary-auto  
 sudo apt install screen     (REDUNDANT in UBUNTU 20)  
 cd 'Thesis - Linux optimized'/Sent_Vent-final  
 screen  
