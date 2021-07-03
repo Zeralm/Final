@@ -13,7 +13,7 @@ sudo apt-get install wget REDUNDANT in UBUNTU 20.
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb  
 sudo apt install ./google-chrome-stable_current_amd64.deb  
 sudo apt install screen     (REDUNDANT in UBUNTU 20)  
-cd '/Thesis - Linux optimized'/Sent_Vent-final  
+cd 'Thesis - Linux optimized'/Sent_Vent-final  
 screen  
 python3 seleCrawl.py [month_before_funding] [telegram_chat_id (optional)]  
 alt+a   
