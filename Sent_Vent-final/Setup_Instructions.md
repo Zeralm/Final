@@ -16,7 +16,7 @@ sudo apt install ./google-chrome-stable_current_amd64.deb
 sudo apt install screen     (REDUNDANT in UBUNTU 20)  
 cd 'Thesis - Linux optimized'/Sent_Vent-final  
 screen  
-python3 seleCrawl.py [month_before_funding] [telegram_chat_id (optional)]  
+python3 seleCrawl.py [month_before_funding] [[telegram bot token] [telegram_chat_id] (optional)]  
 alt+a   
 alt+d  
 (To return it’s:) screen -r [sessionname (optional when there's only one screen)]  
