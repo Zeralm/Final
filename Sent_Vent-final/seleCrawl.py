@@ -353,7 +353,7 @@ if __name__ == "__main__":
                 k.write(message)
                 k.close()
                 if sys.argv[2] != "": 
-                    requests.post('https://api.telegram.org/bot1884693807:AAE6h2zB6FNtddDckG6FuH1jpe_z3UJCdJ8/sendMessage',data={'chat_id': sys.argv[2], 'text': "t = -{}: ".format(month_before_funding) + message})
+                    requests.post('https://api.telegram.org/bot{}/sendMessage'.format(sys.argv[2]),data={'chat_id': sys.argv[3], 'text': "t = -{}: ".format(month_before_funding) + message})
             else:
                 pass
         
