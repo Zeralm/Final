@@ -11,7 +11,7 @@ The code in the Sent_Vent-final folder contains all self-authory code that is st
 
 Here is a list of its contents:  
 
-  seleCrawl.py - An ethical tool that accesses Twitter and analyzes user-generated content in situ as explicitly allowed in Twitter's Terms of Use under the denomination of crawling, complying with the necessary specifications.  
+  seleCrawl.py - An ethical tool that accesses Twitter and analyzes user-generated content in situ as explicitly allowed in Twitter's Terms of Use under the denomination of crawling, complying with the necessary specifications. [More details here][1].
   
   storage.py - A module used for facilitating the access to the local thematic database ThesisDatabase.db.  
   
@@ -28,3 +28,6 @@ Here is a list of its contents:
   data/ThesisDatabase.db - Sqlite database that stores data at the company level. It has been set up for storing tweet data, mainly coming from seleCrawl.py.  
   
   data/errorLog.txt - File that contains script outputs from seleCrawl.py. Updates can be disallowed by setting debug = False in seleCrawl.py
+
+
+[1]: https://github.com/Zeralm/Final/blob/main/Sent_Vent-final/Guide%20to%20seleCrawl.py%20.md
