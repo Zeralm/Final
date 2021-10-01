@@ -33,7 +33,7 @@
   ### How it works:  
   
   
-  -Once the setup is provided as Setup Commands for seleCrawl suggest, the script call takes this form:  
+  -Once the setup is provided as [Setup Commands for seleCrawl][1] suggest, the script call takes this form:  
   
   
   python3 seleCrawl.py [number of months before a funding] [Telegram chat ID (optional)]  
@@ -42,3 +42,4 @@
   
   Also, recording the errors locally can be explicitly disallowed by setting the parameter debug = False.  
   
+[1]: https://github.com/Zeralm/Final/edit/main/Sent_Vent-final/Guide%20to%20seleCrawl.py%20.md
