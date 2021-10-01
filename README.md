@@ -15,7 +15,7 @@ Here is a list of its contents:
   
   storage.py - A module used for facilitating the access to the local thematic database ThesisDatabase.db.  
   
-  "Array creator.ipynb" - A jupyter notebook that processes 18.000 recent tweets extracted from the Twitter API to tokenize and lemmatize them and finally summarize them with an array of the most used words.  
+  "Array creator.ipynb" - A jupyter notebook that processes 18.000 recent tweets extracted from the Twitter API to tokenize and lemmatize them and finally summarize them in an array of the most used words.  
  
   fundownload.py - Script that downloads basic information, including legal names, from a database of Startups called Fundz, as recommended by the propietary website.  
   
