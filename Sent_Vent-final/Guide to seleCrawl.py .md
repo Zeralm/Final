@@ -42,4 +42,4 @@
   
   Also, recording the errors locally can be explicitly disallowed by setting the parameter debug = False.  
   
-[1]: https://github.com/Zeralm/Final/edit/main/Sent_Vent-final/Guide%20to%20seleCrawl.py%20.md
+[1]: https://github.com/Zeralm/Final/blob/main/Sent_Vent-final/Setup_Instructions.md
