@@ -1,6 +1,6 @@
 # Final
 
-Ethical code for crawling through Twitter's financial text information, classifying it and analyzing it. Designed for asyncronous use through several GNU/Linux servers. It can process millions of Tweets in a few days.
+Ethical code for crawling through Twitter's user-generated content concerning financial information on Startups, classifying it and analyzing it. Designed for asyncronous use through several GNU/Linux servers. It can process millions of Tweets in a few days.
 
 
 This document describes all resources in the repository branch.  
