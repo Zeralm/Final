@@ -17,6 +17,8 @@ Here is a list of its contents:
   
   "Array creator.ipynb" - A jupyter notebook that processes 18.000 recent tweets extracted from the Twitter API to tokenize and lemmatize them and finally summarize them in an array of the most used words.  
  
+  ### Tools for obtaining Company Data 
+ 
   fundownload.py - Script that downloads basic information, including legal names, from a database of Startups called Fundz, as recommended by the propietary website.  
   
   mergecsv.py - Script that merges all CSVs downloaded by fundownload.py , and outputs them into either a csv or the local database
