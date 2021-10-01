@@ -2,8 +2,9 @@ import pandas as pd
 import storage
 import datetime
 import os
+# Script that merges the requested company csvs
 
-u = os.listdir("C:/Users/DAVID/Desktop/Box")
+u = os.listdir("SPECIFY DIR")
 true_length = 0
 lengths = []
 for kw in range(len(u)):

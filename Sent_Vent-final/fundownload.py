@@ -13,6 +13,10 @@ import numpy as np
 import storage
 import math
 import datetime
+
+# Script that requests excel files containing company data. As you can see, it is very, very easy in comparison to Twitter.
+# Should be modified to work with Linux
+
 StartDate = datetime.date(2016,1,3)
 print(str(StartDate))
 EndDate = datetime.date(2021,4,6)

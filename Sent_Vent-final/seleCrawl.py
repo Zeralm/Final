@@ -1,4 +1,6 @@
-__version__ = "3.6.10" #Works in higher versions as tested. Theoretically in older versions too
+__version__ = "3.6.10"  # Works in higher versions as tested. Theoretically in older versions too
+                        # All comments here are addressed to myself
+                        # Doubts on the main logic can get clarified when seeing the ouput and when getting familiar with Twitter website's behaviour
 """
 Be sure to download nltk necessary packages. Nltk errors will show you the way
 """
@@ -16,7 +18,7 @@ import nltk
 nltk.download('vader_lexicon')
 nltk.download("averaged_perceptron_tagger")
 nltk.download("wordnet")
-nltk.download('punkt',download_dir='/home/mtourkadze/nltk_data')
+nltk.download('punkt')
 nltk.download('stopwords')
 import nltk.data
 import nltk.tokenize
@@ -32,8 +34,9 @@ import datetime
 import os
 import requests
 import sys
-#Need to press automatically the button sth went wrong. Also, how to notify if internet gone?
-#pd.set_option('display.max_rows', None)
+
+# Need to press automatically the button sth went wrong. Also, how to notify if internet gone?
+
 Gathered = pd.Series()
 
 
@@ -42,7 +45,7 @@ staleMarker = 0
 
 class trinity_condition(object):
     """
-    Defines a waiting condition returnin True when either one of two elements is found: All tweets or a no results page
+    Defines a waiting condition returning True when either one of two elements is found: All tweets or a no results page
     """
 
     def __init__(self):
@@ -67,9 +70,9 @@ def aggregate_str_content(array_of_elements):
 
 def extract(driver, iteration = 0):
     """
-    Collects all tweets visibile by the driver, one by one. Innefficient and ineffective, needs some tweaking
+    Collects all tweets visibile by the driver, one by one. Some tweaking is welcome.
     """
-    #Add wait condition based on presence of all tweets
+    # Add wait condition based on presence of all tweets
     linkos = set()
     if iteration % 4 == 0 and iteration != 0: print("Interruption in the collecting process. The browser window must remain still!")
     
@@ -90,17 +93,19 @@ def extract(driver, iteration = 0):
         else:
                 print("The collecting process accumulated too many interruptions. The DOM cannot be read. Exiting program")
                 driver.quit()
-                #Save progress and notify of stop
+                #S ave progress and notify of stop
     return linkos
 
 """
 
-Main
+Main logic
 
 """
 
 def search_fromCSV(Data,holy_array, bookmark = 0):
-    
+    """
+    holy array: array of words that is going to be compared with Twitter's text data
+    """
 
     print("Initializing crawler")
     WINDOW_SIZE = "1920,1080"
@@ -108,22 +113,17 @@ def search_fromCSV(Data,holy_array, bookmark = 0):
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
     chrome_options.add_argument('--no-sandbox')
-    
     driver = webdriver.Chrome(chrome_options=chrome_options)
-    #driver.get("http://www.twitter.com/login")
-    #print(driver.title)
     
     try:
         for l in range(bookmark,len(Data)):
-            #Here we loop the automated query cycle
+            # Here we loop the automated query cycle
             term = Data["Company"].iloc[l]
             foundation = datetime.datetime.strptime(Data["FundDate"].iloc[l],"%Y-%m-%d").date() - datetime.timedelta(17+30*(month_before_funding-1))
             bracket = foundation - datetime.timedelta(30)
-
             bracko  =   bracket.strftime("%Y-%m-%d")
 
-
-            #Replacing special characters that will be in query
+            # Replacing special characters that will be in query
             if "&" in term:
                 term = term.replace("&","%26")
             if "#" in term:
@@ -135,13 +135,13 @@ def search_fromCSV(Data,holy_array, bookmark = 0):
                 term+'\"' + '%20until%3A{}%20since%3A{}'.format(foundation,bracko) +'&src=typed_query&f=live'
                 )
 
-            #There must be a second between queries, at least.
+            # There must be a second between queries, at least.
         
             try:
                 WebDriverWait(driver, 2.5).until(
                     trinity_condition()
                 )
-            #What's this, makes no sense, it just continues??
+            # What's this, it just continues??
             except TimeoutException:
                 #Add case when no internet
                 driver.quit()
@@ -150,37 +150,32 @@ def search_fromCSV(Data,holy_array, bookmark = 0):
 
             try:
                 ak = time.perf_counter()
-                print("dumbo")
                 WebDriverWait(driver, 5).until(
                     EC.presence_of_element_located((By.XPATH,"//div[@data-testid='emptyState']"))
                 )
                 u = driver.find_element_by_xpath("//div[@data-testid='emptyState']")
-                print("dumbini")
                 um = pd.Series(Data["tweets"])
                 um[l] = 0
                 Data["tweets"] = um
                 links = {("EMPTY_RESULT",Data["Company"].iloc[l],None,None,None,bracket)}
-                print("imperator")
                 print("ID: {}".format(Data["ID"].iloc[l]))
                 print(links)
                 
             except TimeoutException:
-                #Put except
-                                   
+                # Put except               
                 links=set()
                 u = True
-                
-                #This will need tweaking too
+                # This will need tweaking too
                 count_scrap = time.perf_counter()
                 while u == True:           
-                    #Reference /html/body/div/div/div/div[2]/main/div/div/div/div[1]/div/div[2]/div/div/section/div/div/div[x]/div/div/article
+                    # Reference /html/body/div/div/div/div[2]/main/div/div/div/div[1]/div/div[2]/div/div/section/div/div/div[x]/div/div/article
                     time.sleep(0.2)
                     if math.trunc(driver.execute_script("return document.body.scrollHeight;") - driver.execute_script("return document.documentElement.scrollTop;") - driver.execute_script("return window.innerHeight;")) == 0:
                         try:
                             WebDriverWait(driver, 1.5).until(
                                 EC.presence_of_element_located((By.XPATH,"//div[@role='progressbar']"))
                                 )
-                            #Add here what happens when it loads eternally
+                            # Add here what happens when Twitter loads eternally
                         except TimeoutException:
                             u = False
                         try:
@@ -193,8 +188,8 @@ def search_fromCSV(Data,holy_array, bookmark = 0):
                             Data["tweets"] = um
                             u = False
                     links = links.union(extract(driver))
-                    #u=False or break??
-                    # Why is this even here? Relocate to extract 
+                    # u=False or break??
+                    # Why is this here? Relocate to extract 
                     if 1756 + driver.execute_script("return document.documentElement.scrollTop;") >= driver.execute_script("return document.body.scrollHeight;"):
                         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
                     else:
@@ -226,10 +221,8 @@ def search_fromCSV(Data,holy_array, bookmark = 0):
             if l +1 - bookmark== 0: perc = 0
             else: perc = ouaga*100/(l+1- bookmark)
             print("Valid companies: {} out of {}. ({}%), with an average amount of Tweets of {}".format(ouaga, l+1-bookmark, perc, np.mean(Data["tweets"].iloc[acceptable])))
-            #[Gathered.add((z[0], Data["Company"].iloc[l], z[3], z[2], z[1])) for z in links]
-            #print((z[0], Data["Company"].iloc[l], z[3], z[2], z[1]) for z in links)
-                
-            #Don't connect to database if no tweets gathered
+        
+            # Don't connect to database if no tweets gathered
 
             
             stops = nltk.corpus.stopwords.words("english")
@@ -278,7 +271,7 @@ def apply_CSV():
             Data["tweets"] = 0
             holy_array = pd.read_csv("data/WordArray.csv")["Words"]
             
-            #Additional instructions on what to fetch
+        # Additional instructions on what to fetch
         finally:
             print("Instructions uploaded")
             pointer = storage.extract_last_company()
@@ -291,10 +284,9 @@ def apply_CSV():
                 foundo = datetime.datetime.strptime(pointer[2],"%Y-%m-%d").date()
                 bracketo = foundo + datetime.timedelta(17+30*month_before_funding)
                 brackoto  =   bracketo.strftime("%Y-%m-%d")
-                
-                #print(brackoto,Data["FundDate"].iloc[0])
+    
                 kala = Data["Company"] == pointer[0]
-                #print(Data.loc[kala,"ID"].loc[brackoto == Data["FundDate"]])
+                
                 try:
                     u = int(Data.loc[kala,"ID"].loc[brackoto == Data["FundDate"]])
                     print(u)
@@ -316,29 +308,31 @@ def apply_CSV():
             
             if len(Data["Company"]) != u:
                 result = search_fromCSV(Data,holy_array,u+1)
-                    #None: inconclusive, interrupted #True: Completed
+                    # None: inconclusive, interrupted #True: Completed
         
                 print("Extraction completed")
                 
-            #Instruction for next csv
+            # Instruction for next csv
             else:
                 print("You are opening a finished dataset")
                 
                 
-            #Instruction for next csv
+    
 
-
+"""
+MAIN
+"""
 
 if __name__ == "__main__":
     """
     Script parameters: 
         month_before_funding: time on which the crawling is focussed. Expressed on number of months before the funding. 
             Should be greater than 0
-        chat_id: The id of your chat with the Telegram bot @seleCrawl_bot
+        chat_id: The id of your chat with the Telegram bot of your choice (OPTIONAL)
     """
     
     debug = True 
-    while True:
+    while True:  #MAIN LOOP
         try:
             fiki = SentimentIntensityAnalyzer()
             global month_before_funding
@@ -349,7 +343,7 @@ if __name__ == "__main__":
             if debug == True:
                 reportime = (datetime.timedelta(hours=2) + datetime.datetime.now()).strftime("%H:%M:%S-%Y/%m/%d")
                 k = open("data/errorLog.txt", "a")
-                message = "Error {} at time {} at company and tweet nummber {}".format(exc, reportime, storage.extract_last_company())+ os.linesep
+                message = "Error {} at time {} at company and tweet number {}".format(exc, reportime, storage.extract_last_company())+ os.linesep
                 k.write(message)
                 k.close()
                 if sys.argv[2] != "": 
