@@ -20,6 +20,7 @@
  ### What it does not do:  
 
   -Be completely informative about its inner workings. The complexity of the parsing requires readers to be well acquainted with Selenium and Twitter's behaviour  
+  
   -Run smoothlessly without sporadic exceptions that cannot be handled.  
   
   -Guarantee its autonomy in front of persistent errors.  
