@@ -16,12 +16,14 @@ Here is a list of its contents:
   storage.py - A module used for facilitating the access to the local thematic database ThesisDatabase.db.  
   
   "Array creator.ipynb" - A jupyter notebook that processes 18.000 recent tweets extracted from the Twitter API to tokenize and lemmatize them and finally summarize them with an array of the most used words.  
-  
-  data/WordArray.csv - The array outputed by the afforementioned jupyter file.  
-  
+ 
   fundownload.py - Script that downloads basic information, including legal names, from a database of Startups called Fundz, as recommended by the propietary website.  
   
   mergecsv.py - Script that merges all CSVs downloaded by fundownload.py , and outputs them into either a csv or the local database
+  
+  ### Data folder (src)
+   
+  data/WordArray.csv - The array outputed by the afforementioned jupyter file.  
   
   data/ThesisDatabase.db - Sqlite database that stores data at the company level. It has been set up for storing tweet data, mainly coming from seleCrawl.py.  
   
