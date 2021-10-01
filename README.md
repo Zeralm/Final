@@ -23,6 +23,6 @@ Here is a list of its contents:
   
   mergecsv.py - Script that merges all CSVs downloaded by fundownload.py , and outputs them into either a csv or the local database
   
-  data/ThesisDatabase.db - Sqlite3 database that stores data at the company level. It has been set up for storing tweet data, mainly through seleCrawl.py.  
+  data/ThesisDatabase.db - Sqlite database that stores data at the company level. It has been set up for storing tweet data, mainly through seleCrawl.py.  
   
   data/errorLog.txt - File that contains script outputs from seleCrawl.py. Updates can be disallowed by setting debug = False in seleCrawl.py
